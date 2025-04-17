@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8c972e3580a182f72f9751b39dd8bc0c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 230px;
+    height: auto;
+    z-index:9999;
+    font-size:14px;
+    background-color: white;
+    border:2px solid gray;
+    padding: 10px;
+    border-radius: 8px;">
+<b>Ivy League Rank</b><br><i style="background:#08306B;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Summa Cum Ivy<br><i style="background:#2171B5;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Magna Cum Ivy<br><i style="background:#6BAED6;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Cum Laude<br><i style="background:#C6DBEF;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Waitlisted<br><i style="background:#FFD700;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Legacy Hold<br><i style="background:#7F00FF;width:12px;height:12px;display:inline-block;margin-right:5px;"></i> Data Not Available<br>
+</div>
+    
+            <div class="folium-map" id="map_8c972e3580a182f72f9751b39dd8bc0c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8c972e3580a182f72f9751b39dd8bc0c = L.map(
+                "map_8c972e3580a182f72f9751b39dd8bc0c",
+                {
+                    center: [41.2, -73.8],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_52b4337ce5b120307faa7315aa0d44fe = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var circle_marker_fe749d6002c5095936ada86f8c45982c = L.circleMarker(
+                [42.36574324999999, -71.12221394207614],
+                {"bubblingMouseEvents": true, "color": "#08306B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08306B", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_7136f1a5d68d12a136554bd3edad5410 = L.popup({"maxWidth": 300});
+
+        
+            var html_d47d452eae07e9aa1e5a14f526a1e00e = $(`<div id="html_d47d452eae07e9aa1e5a14f526a1e00e" style="width: 100.0%; height: 100.0%;"><b>Harvard University</b><br>Location: Cambridge, MA<br>CSI Score: 0.861<br>Rank: 5<br>2028 Endowment: $1,576,052,003<br>2028 Instructional Costs: $1,271,167,930<br>Category: Summa Cum Ivy</div>`)[0];
+            popup_7136f1a5d68d12a136554bd3edad5410.setContent(html_d47d452eae07e9aa1e5a14f526a1e00e);
+        
+
+        circle_marker_fe749d6002c5095936ada86f8c45982c.bindPopup(popup_7136f1a5d68d12a136554bd3edad5410)
+        ;
+
+        
+    
+    
+            var marker_df5e3ff3920f72333fec7765d796773c = L.marker(
+                [42.46574324999999, -71.02221394207615],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_d0646c3e08b7a30d7df9095d2f6e288d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eHarvard University\u003c/div\u003e"});
+            marker_df5e3ff3920f72333fec7765d796773c.setIcon(div_icon_d0646c3e08b7a30d7df9095d2f6e288d);
+        
+    
+            var circle_marker_c704528ab04049798291589276d6d2de = L.circleMarker(
+                [42.4529076, -76.48008423030923],
+                {"bubblingMouseEvents": true, "color": "#2171B5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171B5", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_69ad0c78648ced01552a8ab3b9375a7f = L.popup({"maxWidth": 300});
+
+        
+            var html_d94a683b8aa857211775c82dc389ca4f = $(`<div id="html_d94a683b8aa857211775c82dc389ca4f" style="width: 100.0%; height: 100.0%;"><b>Cornell University</b><br>Location: Ithaca, NY<br>CSI Score: 0.857<br>Rank: 6<br>2028 Endowment: $10,458,861,072<br>2028 Instructional Costs: $954,636,373<br>Category: Magna Cum Ivy</div>`)[0];
+            popup_69ad0c78648ced01552a8ab3b9375a7f.setContent(html_d94a683b8aa857211775c82dc389ca4f);
+        
+
+        circle_marker_c704528ab04049798291589276d6d2de.bindPopup(popup_69ad0c78648ced01552a8ab3b9375a7f)
+        ;
+
+        
+    
+    
+            var marker_03bef151d72d44c77a196e4255cf6837 = L.marker(
+                [42.552907600000005, -76.38008423030924],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_4028410d0e325bcaebd3b27a903ba797 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eCornell University\u003c/div\u003e"});
+            marker_03bef151d72d44c77a196e4255cf6837.setIcon(div_icon_4028410d0e325bcaebd3b27a903ba797);
+        
+    
+            var circle_marker_62b0c2da36c5206ccaf343274753772d = L.circleMarker(
+                [40.33867515, -74.65836549131683],
+                {"bubblingMouseEvents": true, "color": "#6BAED6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6BAED6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_47f834101e03c5e0662add738c8a9abf = L.popup({"maxWidth": 300});
+
+        
+            var html_e4af9609111bfc37bb528442656aad83 = $(`<div id="html_e4af9609111bfc37bb528442656aad83" style="width: 100.0%; height: 100.0%;"><b>Princeton University</b><br>Location: Princeton, NJ<br>CSI Score: 0.831<br>Rank: 20<br>2028 Endowment: $45,087,052,885<br>2028 Instructional Costs: $613,207,189<br>Category: Cum Laude</div>`)[0];
+            popup_47f834101e03c5e0662add738c8a9abf.setContent(html_e4af9609111bfc37bb528442656aad83);
+        
+
+        circle_marker_62b0c2da36c5206ccaf343274753772d.bindPopup(popup_47f834101e03c5e0662add738c8a9abf)
+        ;
+
+        
+    
+    
+            var marker_2efd328e6eca5cb1c7b51686acaaa585 = L.marker(
+                [40.43867515, -74.55836549131683],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_452d4ff27681a120bcc346138bb016bd = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003ePrinceton University\u003c/div\u003e"});
+            marker_2efd328e6eca5cb1c7b51686acaaa585.setIcon(div_icon_452d4ff27681a120bcc346138bb016bd);
+        
+    
+            var circle_marker_435da520a419a9ea3c1ba986a8785fa4 = L.circleMarker(
+                [41.3135727, -72.9231731],
+                {"bubblingMouseEvents": true, "color": "#C6DBEF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C6DBEF", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_4fd0f82c420967e821360ed8307e98ac = L.popup({"maxWidth": 300});
+
+        
+            var html_e0ff0d21f02aa4c7ab997f498bfc6924 = $(`<div id="html_e0ff0d21f02aa4c7ab997f498bfc6924" style="width: 100.0%; height: 100.0%;"><b>Yale University</b><br>Location: New Haven, CT<br>CSI Score: 0.770<br>Rank: 22<br>2028 Endowment: $50,681,474,134<br>2028 Instructional Costs: $1,782,750,524<br>Category: Waitlisted</div>`)[0];
+            popup_4fd0f82c420967e821360ed8307e98ac.setContent(html_e0ff0d21f02aa4c7ab997f498bfc6924);
+        
+
+        circle_marker_435da520a419a9ea3c1ba986a8785fa4.bindPopup(popup_4fd0f82c420967e821360ed8307e98ac)
+        ;
+
+        
+    
+    
+            var marker_fc58253aa71c8acaaa67ea89d7d8e504 = L.marker(
+                [41.4135727, -72.8231731],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_2aa9788292468a8b28a52f1e333a5481 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eYale University\u003c/div\u003e"});
+            marker_fc58253aa71c8acaaa67ea89d7d8e504.setIcon(div_icon_2aa9788292468a8b28a52f1e333a5481);
+        
+    
+            var circle_marker_6d93e6daa0a96f710da584aa79f7ca85 = L.circleMarker(
+                [41.8186395, -71.4088008716793],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_b5298ce0c8b18d851c0def2d13edd040 = L.popup({"maxWidth": 300});
+
+        
+            var html_459cd8d9269656b4273c04dafe9fea67 = $(`<div id="html_459cd8d9269656b4273c04dafe9fea67" style="width: 100.0%; height: 100.0%;"><b>Brown University</b><br>Location: Providence, RI<br>CSI Score: 0.728<br>Rank: 29<br>2028 Endowment: $7,887,522,074<br>2028 Instructional Costs: $393,591,915<br>Category: Legacy Hold</div>`)[0];
+            popup_b5298ce0c8b18d851c0def2d13edd040.setContent(html_459cd8d9269656b4273c04dafe9fea67);
+        
+
+        circle_marker_6d93e6daa0a96f710da584aa79f7ca85.bindPopup(popup_b5298ce0c8b18d851c0def2d13edd040)
+        ;
+
+        
+    
+    
+            var marker_52f1e1aad0ec4de2b5c116ca1c2c29b1 = L.marker(
+                [41.918639500000005, -71.30880087167931],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_f068691cf54beadddcf0f8172cb3b680 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eBrown University\u003c/div\u003e"});
+            marker_52f1e1aad0ec4de2b5c116ca1c2c29b1.setIcon(div_icon_f068691cf54beadddcf0f8172cb3b680);
+        
+    
+            var circle_marker_5127bd94cf66a6990d3adc8e1a22f45e = L.circleMarker(
+                [43.7033798, -72.28860224553567],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_cb388c6d23ef3670350dd15da2331f3a = L.popup({"maxWidth": 300});
+
+        
+            var html_94477e7c0f992ac4ae27d6272678c838 = $(`<div id="html_94477e7c0f992ac4ae27d6272678c838" style="width: 100.0%; height: 100.0%;"><b>Dartmouth College</b><br>Location: Hanover, NH<br>CSI Score: 0.513<br>Rank: 236<br>2028 Endowment: $10,766,698,371<br>2028 Instructional Costs: $212,536,332<br>Category: Legacy Hold</div>`)[0];
+            popup_cb388c6d23ef3670350dd15da2331f3a.setContent(html_94477e7c0f992ac4ae27d6272678c838);
+        
+
+        circle_marker_5127bd94cf66a6990d3adc8e1a22f45e.bindPopup(popup_cb388c6d23ef3670350dd15da2331f3a)
+        ;
+
+        
+    
+    
+            var marker_ade6867446346f30204c39e62aa316be = L.marker(
+                [43.8033798, -72.18860224553568],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_cf800c90d630f0ff071ac6c9ee7d0f6b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eDartmouth College\u003c/div\u003e"});
+            marker_ade6867446346f30204c39e62aa316be.setIcon(div_icon_cf800c90d630f0ff071ac6c9ee7d0f6b);
+        
+    
+            var circle_marker_15346f45575a39d3c703529840f173f3 = L.circleMarker(
+                [40.8075, -73.9626],
+                {"bubblingMouseEvents": true, "color": "#7F00FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F00FF", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_820dc55c34f94fc76aedb36c3667286d = L.popup({"maxWidth": 300});
+
+        
+            var html_ae5a0816de91acf6048c2485f8868ac9 = $(`<div id="html_ae5a0816de91acf6048c2485f8868ac9" style="width: 100.0%; height: 100.0%;"><b>Columbia University</b><br>Location: New York, NY<br><i>Data not available</i><br>Category: Data Not Available</div>`)[0];
+            popup_820dc55c34f94fc76aedb36c3667286d.setContent(html_ae5a0816de91acf6048c2485f8868ac9);
+        
+
+        circle_marker_15346f45575a39d3c703529840f173f3.bindPopup(popup_820dc55c34f94fc76aedb36c3667286d)
+        ;
+
+        
+    
+    
+            var marker_78f961b174bbdd5ded24d3340f40951c = L.marker(
+                [40.9075, -73.8626],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_d5612dc54663233eba993c919da484c9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eColumbia University\u003c/div\u003e"});
+            marker_78f961b174bbdd5ded24d3340f40951c.setIcon(div_icon_d5612dc54663233eba993c919da484c9);
+        
+    
+            var circle_marker_e38213f7f58a414e9e25c5734d2bdf39 = L.circleMarker(
+                [39.9522, -75.1932],
+                {"bubblingMouseEvents": true, "color": "#7F00FF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7F00FF", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+        var popup_efb984e4eebd6c2c1cd8b12236254733 = L.popup({"maxWidth": 300});
+
+        
+            var html_2c127ee7860d9c72da0f934bbb1c94d2 = $(`<div id="html_2c127ee7860d9c72da0f934bbb1c94d2" style="width: 100.0%; height: 100.0%;"><b>University of Pennsylvania</b><br>Location: Philadelphia, PA<br><i>Data not available</i><br>Category: Data Not Available</div>`)[0];
+            popup_efb984e4eebd6c2c1cd8b12236254733.setContent(html_2c127ee7860d9c72da0f934bbb1c94d2);
+        
+
+        circle_marker_e38213f7f58a414e9e25c5734d2bdf39.bindPopup(popup_efb984e4eebd6c2c1cd8b12236254733)
+        ;
+
+        
+    
+    
+            var marker_653dfe94d7d17887fb545180516d1891 = L.marker(
+                [40.0522, -75.09320000000001],
+                {}
+            ).addTo(map_8c972e3580a182f72f9751b39dd8bc0c);
+        
+    
+            var div_icon_f059a269bb751037e9c59334933fe0a7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold;\"\u003eUniversity of Pennsylvania\u003c/div\u003e"});
+            marker_653dfe94d7d17887fb545180516d1891.setIcon(div_icon_f059a269bb751037e9c59334933fe0a7);
+        
+</script>
+</html>
